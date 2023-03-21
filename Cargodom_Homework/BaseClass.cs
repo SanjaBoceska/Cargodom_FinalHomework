@@ -146,7 +146,7 @@ namespace Cargodom_Homework
             List<IWebElement> paymentMethods = paymentForm.FindElements(By.CssSelector("div[class^='row']:not([class$='ng-hide'])")).ToList();
             Console.WriteLine(paymentMethods.Count);
 
-            int indexPaymentMethod = random.Next(0, paymentMethods.Count-1);
+            int indexPaymentMethod = random.Next(0, paymentMethods.Count);
 
             wait.Until(Expect.ElementIsVisible(By.CssSelector("div > .checkbox-input ")));
             IWebElement chosenPaymentMethod = paymentMethods[indexPaymentMethod].FindElement(By.CssSelector("div > .checkbox-input "));
